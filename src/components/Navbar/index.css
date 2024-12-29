@@ -3,9 +3,9 @@
   font-family: 'Roboto';
   font-size: 16px;
 }
-.popup-content  {
-    width: 100%;
-    padding: 20px 0;
-    display: flex;
-    justify-content: center;
+.popup-content {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
 }
