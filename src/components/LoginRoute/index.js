@@ -132,7 +132,7 @@ class LoginRoute extends Component {
                     />
                     <LoginCheckboxLabel
                       darkTheme={isDarkTheme}
-                      htmlFor="username"
+                      htmlFor="checkbox"
                     >
                       Show Password
                     </LoginCheckboxLabel>
