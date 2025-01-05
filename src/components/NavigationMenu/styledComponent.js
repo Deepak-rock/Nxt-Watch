@@ -13,12 +13,15 @@ export const NavigationContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 250px;
+    width: 200px;
     height: 92vh;
     position: fixed;
-    top: 8vh;
+    top: 77px;
     padding: 20px 0;
     background-color: ${props => (props.darkTheme ? '#231f20' : '#f1f5f9')};
+  }
+  @media screen and (min-width: 1024px) {
+    width: 250px;
   }
 `
 export const NavOptions = styled.ul`
@@ -38,8 +41,11 @@ export const NavLinkContainer = styled.li`
 export const NavText = styled.p`
   color: ${props => (props.darkTheme ? '#f9f9f9' : '#231f20')};
   font-family: 'Roboto';
-  font-size: 18px;
+  font-size: 16px;
   margin-left: 15px;
+  @media screen and (min-width: 1024px) {
+    font-size: 18px;
+  }
 `
 export const ContactInfo = styled.div`
   display: flex;
@@ -48,10 +54,13 @@ export const ContactInfo = styled.div`
 `
 export const ContactHeading = styled.p`
   font-family: 'Roboto';
-  font-size: 25px;
+  font-size: 20px;
   color: ${props => (props.darkTheme ? '#f9f9f9' : '#231f20')};
   font-weight: bold;
   line-height: 1.8;
+  @media screen and (min-width: 1024px) {
+    font-size: 25px;
+  }
 `
 export const ContactIcons = styled.div`
   display: flex;
@@ -67,6 +76,9 @@ export const ContactImage = styled.img`
 export const ContactNote = styled.p`
   color: ${props => (props.darkTheme ? '#f9f9f9' : '#231f20')};
   font-family: 'Roboto';
-  font-size: 18px;
+  font-size: 16px;
   padding: 10px 0;
+  @media screen and (min-width: 1024px) {
+    font-size: 18px;
+  }
 `
