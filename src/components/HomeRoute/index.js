@@ -10,6 +10,7 @@ import ThemeContext from '../../context/ThemeContext'
 import Navbar from '../Navbar'
 import NavigationMenu from '../NavigationMenu'
 import HomeVideos from '../HomeVideos'
+import FailureView from '../FailureView'
 
 import {
   HomeContainer,
@@ -114,7 +115,7 @@ class HomeRoute extends Component {
     return <HomeVideos retrySearch={this.retrySearch} VideosData={VideosData} />
   }
 
-  renderFailureView = () => <h1>Failed</h1>
+  renderHomeFailureView = () => <FailureView retrySearch={this.retrySearch} />
 
   render() {
     const jwtToken = Cookies.get('jwt_token')

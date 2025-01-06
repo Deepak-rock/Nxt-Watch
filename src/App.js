@@ -1,4 +1,4 @@
-import {Switch, Route, withRouter} from 'react-router-dom'
+import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
 import {Component} from 'react'
 import ThemeContext from './context/ThemeContext'
 
@@ -8,13 +8,14 @@ import TrendingRoute from './components/TrendingRoute'
 import GamingRoute from './components/GamingRoute'
 import SavedVideoRoute from './components/SavedVideoRoute'
 import VideoRoute from './components/VideoRoute'
+import NotFound from './components/NotFound'
 
 import ProtectedRoute from './components/ProtectedRoute'
 import './App.css'
 
 // Replace your code here
 class App extends Component {
-  state = {isDarkTheme: false, activeTab: ''}
+  state = {isDarkTheme: false, activeTab: '', savedVideos: []}
 
   componentDidMount() {
     const {location} = this.props
@@ -48,8 +49,27 @@ class App extends Component {
     this.setState(prevState => ({isDarkTheme: !prevState.isDarkTheme}))
   }
 
+  addVideo = videoDetail => {
+    const {savedVideos} = this.state
+    const index = savedVideos.findIndex(
+      eachItem => eachItem.id === videoDetail.id,
+    )
+    if (index === -1) {
+      this.setState({savedVideos: [...savedVideos, videoDetail]})
+    } else {
+      savedVideos.splice(index, 1)
+      this.setState({savedVideos})
+    }
+  }
+
+  removeVideo = id => {
+    const {savedVideos} = this.state
+    const updateSavedVideos = savedVideos.filter(each => each.id !== id)
+    this.setState({savedVideos: updateSavedVideos})
+  }
+
   render() {
-    const {isDarkTheme, activeTab} = this.state
+    const {isDarkTheme, activeTab, savedVideos} = this.state
     return (
       <ThemeContext.Provider
         value={{
@@ -57,6 +77,8 @@ class App extends Component {
           toggleTheme: this.toggleTheme,
           activeTab,
           changeTab: this.changeTab,
+          savedVideos,
+          addVideo: this.addVideo,
         }}
       >
         <Switch>
@@ -70,6 +92,8 @@ class App extends Component {
             component={SavedVideoRoute}
           />
           <ProtectedRoute exact path="/videos/:id" component={VideoRoute} />
+          <Route path="/not-found" component={NotFound} />
+          <Redirect to="not-found" />
         </Switch>
       </ThemeContext.Provider>
     )

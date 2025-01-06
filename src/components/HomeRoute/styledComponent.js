@@ -102,6 +102,9 @@ export const SearchButton = styled.button`
   border: 1px solid #7e858e;
 `
 export const LoaderContainer = styled.div`
+  min-height: 50vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 `
