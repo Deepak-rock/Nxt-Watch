@@ -13,29 +13,31 @@ const HomeVideos = props => (
   <ThemeContext.Consumer>
     {value => {
       const {isDarkTheme} = value
-      const {VideosData, retrySearch} = props
+      const {videosData, retrySearch} = props
       const onClickRetry = () => {
         retrySearch()
       }
       return (
         <>
-          {VideosData <= 0 ? (
+          {videosData <= 0 ? (
             <NoSearchResultContainer>
               <NoResultImg
                 src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-search-results-img.png"
                 alt="no videos"
               />
               <NoResultHeading darkTheme={isDarkTheme}>
-                No Search Result found
+                No Search results found
               </NoResultHeading>
               <NoResultDesc>
                 Try different key words or remove search filter
               </NoResultDesc>
-              <NoResultRetryBtn onClick={onClickRetry}>Retry</NoResultRetryBtn>
+              <NoResultRetryBtn type="button" onClick={onClickRetry}>
+                Retry
+              </NoResultRetryBtn>
             </NoSearchResultContainer>
           ) : (
             <HomeVideosList>
-              {VideosData.map(videoDetails => (
+              {videosData.map(videoDetails => (
                 <HomeVideoItems
                   key={videoDetails.id}
                   videoDetails={videoDetails}

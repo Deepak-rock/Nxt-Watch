@@ -35,7 +35,7 @@ const apiConstant = {
 
 class HomeRoute extends Component {
   state = {
-    VideosData: [],
+    videosData: [],
     display: 'flex',
     apiStatus: apiConstant.initial,
     searchInput: '',
@@ -68,7 +68,7 @@ class HomeRoute extends Component {
         name: eachVideo.channel.name,
         profileImageUrl: eachVideo.channel.profile_image_url,
       }))
-      this.setState({apiStatus: apiConstant.success, VideosData: updateData})
+      this.setState({apiStatus: apiConstant.success, videosData: updateData})
     } else {
       this.setState({apiStatus: apiConstant.failure})
     }
@@ -111,8 +111,8 @@ class HomeRoute extends Component {
   )
 
   renderHomeSuccessView = () => {
-    const {VideosData} = this.state
-    return <HomeVideos retrySearch={this.retrySearch} VideosData={VideosData} />
+    const {videosData} = this.state
+    return <HomeVideos retrySearch={this.retrySearch} videosData={videosData} />
   }
 
   renderHomeFailureView = () => <FailureView retrySearch={this.retrySearch} />
@@ -139,11 +139,15 @@ class HomeRoute extends Component {
                       alt="nxt watch logo"
                     />
                     <BannerText>
-                      Buy Nxt watch Premium prepaid plans with UPI
+                      Buy Nxt Watch Premium prepaid plans with UPI
                     </BannerText>
                     <BannerGetBtn type="button">GET IT NOW</BannerGetBtn>
                   </BannerContent>
-                  <CloseBannerButton type="button" onClick={this.closeBanner}>
+                  <CloseBannerButton
+                    type="button"
+                    onClick={this.closeBanner}
+                    data-testid="close"
+                  >
                     <RiCloseLine size={30} />
                   </CloseBannerButton>
                 </BannerBg>
@@ -155,7 +159,11 @@ class HomeRoute extends Component {
                     placeholder="Search"
                     darkTheme={isDarkTheme}
                   />
-                  <SearchButton type="button" onClick={this.onClickSearch}>
+                  <SearchButton
+                    type="button"
+                    onClick={this.onClickSearch}
+                    data-testid="searchButton"
+                  >
                     <AiOutlineSearch size={20} color="#7e858e" />
                   </SearchButton>
                 </SearchInputContainer>

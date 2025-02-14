@@ -171,7 +171,9 @@ const Navbar = props => (
                           size={30}
                           color={activeTab === 'Saved' ? '#ff0b37' : '#909090'}
                         />
-                        <MenuText darkTheme={isDarkTheme}>Saved Video</MenuText>
+                        <MenuText darkTheme={isDarkTheme}>
+                          Saved Videos
+                        </MenuText>
                       </MenuItem>
                     </MenuLink>
                   </MenuList>
@@ -182,7 +184,7 @@ const Navbar = props => (
             <Popup
               modal
               trigger={
-                <LogoutIconButton type="button" data-testid="iconButton">
+                <LogoutIconButton type="button">
                   <FiLogOut size={32} color={isDarkTheme ? '#ffffff' : null} />
                 </LogoutIconButton>
               }
@@ -191,7 +193,7 @@ const Navbar = props => (
               {close => (
                 <LogoutContainer darkTheme={isDarkTheme}>
                   <LogoutSentence darkTheme={isDarkTheme}>
-                    Are you sure you want to logout?
+                    Are you sure, you want to logout?
                   </LogoutSentence>
                   <LogoutButtons>
                     <CancelButton
@@ -212,11 +214,7 @@ const Navbar = props => (
             <Popup
               modal
               trigger={
-                <LogoutButton
-                  darkTheme={isDarkTheme}
-                  type="button"
-                  data-testid="iconButton"
-                >
+                <LogoutButton darkTheme={isDarkTheme} type="button">
                   Logout
                 </LogoutButton>
               }
@@ -224,7 +222,7 @@ const Navbar = props => (
               {close => (
                 <LogoutContainer darkTheme={isDarkTheme}>
                   <LogoutSentence darkTheme={isDarkTheme}>
-                    Are you sure you want to logout?
+                    Are you sure, you want to logout?
                   </LogoutSentence>
                   <LogoutButtons>
                     <CancelButton

@@ -23,7 +23,7 @@ const FailureView = props => (
         : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
       return (
         <FailureViewContainer>
-          <FailuretImg src={failureImg} alt="failure" />
+          <FailuretImg src={failureImg} alt="failure view" />
           <FailureHeading darkTheme={isDarkTheme}>
             Oops! Something Went Wrong
           </FailureHeading>

@@ -62,7 +62,7 @@ const SavedVideoRoute = () => {
                       <CgPlayListAdd size={35} color="#ff0000" />
                     </SavedVideoImg>
                     <SavedVideoHeaderText darkTheme={isDarkTheme}>
-                      Saved Video
+                      Saved Videos
                     </SavedVideoHeaderText>
                   </SavedVideoHeader>
                   <SavedVideoList>

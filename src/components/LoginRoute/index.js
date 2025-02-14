@@ -29,7 +29,12 @@ const logoDark =
   'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
 
 class LoginRoute extends Component {
-  state = {username: '', password: '', showPassword: false, errorMessage: ''}
+  state = {
+    username: 'rahul',
+    password: 'rahul@2021',
+    showPassword: false,
+    errorMessage: '',
+  }
 
   successfullySubmit = jwtToken => {
     const {history} = this.props
@@ -95,7 +100,7 @@ class LoginRoute extends Component {
               <FormContainer darkTheme={isDarkTheme}>
                 <LoginLogo
                   src={isDarkTheme ? logoDark : logoLight}
-                  alt="logo"
+                  alt="website logo"
                 />
                 <Form onSubmit={this.onSubmitForm}>
                   <InputContainer>
@@ -112,7 +117,7 @@ class LoginRoute extends Component {
                     />
                   </InputContainer>
                   <InputContainer>
-                    <LoginLabel darkTheme={isDarkTheme} htmlFor="username">
+                    <LoginLabel darkTheme={isDarkTheme} htmlFor="password">
                       PASSWORD
                     </LoginLabel>
                     <LoginInput

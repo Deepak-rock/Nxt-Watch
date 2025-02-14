@@ -96,7 +96,7 @@ class NavigationMenu extends Component {
                         size={30}
                         color={activeTab === 'Saved' ? '#ff0b37' : '#909090'}
                       />
-                      <NavText darkTheme={isDarkTheme}>Saved video</NavText>
+                      <NavText darkTheme={isDarkTheme}>Saved videos</NavText>
                     </NavLinkContainer>
                   </NavLink>
                 </NavOptions>

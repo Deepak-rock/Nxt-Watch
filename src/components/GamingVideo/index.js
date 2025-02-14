@@ -18,7 +18,7 @@ const GamingVideo = props => (
       return (
         <VideosLink to={`/videos/${id}`}>
           <GamingVideoItem>
-            <GamingThumbnail src={thumbnailUrl} alt="thumbnail" />
+            <GamingThumbnail src={thumbnailUrl} alt="video thumbnail" />
             <TitleContainer>
               <Title darkTheme={isDarkTheme}>{title}</Title>
               <Views>

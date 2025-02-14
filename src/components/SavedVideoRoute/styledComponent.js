@@ -30,7 +30,7 @@ export const SavedVideoImg = styled.div`
   width: 50px;
   border-radius: 50%;
 `
-export const SavedVideoHeaderText = styled.p`
+export const SavedVideoHeaderText = styled.h1`
   font-family: 'Roboto';
   font-size: 18px;
   font-weight: bold;

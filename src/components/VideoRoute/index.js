@@ -12,6 +12,7 @@ import ThemeContext from '../../context/ThemeContext'
 
 import Navbar from '../Navbar'
 import NavigationMenu from '../NavigationMenu'
+import FailureView from '../FailureView'
 
 import {
   LoaderContainer,
@@ -218,7 +219,7 @@ class VideoRoute extends Component {
     </ThemeContext.Consumer>
   )
 
-  renderFailureView = () => <h1>Failure</h1>
+  renderFailureView = () => <FailureView retrySearch={this.retrySearch} />
 
   renderVideoView = () => {
     const {apiStatus} = this.state

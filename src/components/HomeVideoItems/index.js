@@ -41,9 +41,9 @@ const HomeVideoItems = props => (
       return (
         <VideosLink to={`/videos/${id}`}>
           <HomeVideoItem>
-            <HomeThumbnail src={thumbnailUrl} alt="thumbnail" />
+            <HomeThumbnail src={thumbnailUrl} alt="video thumbnail" />
             <TitleContainer>
-              <ChannelProfile src={profileImageUrl} alt="channel" />
+              <ChannelProfile src={profileImageUrl} alt="channel logo" />
               <VideoInfo>
                 <Title darkTheme={isDarkTheme}>{title}</Title>
                 <VideosDetailsList>

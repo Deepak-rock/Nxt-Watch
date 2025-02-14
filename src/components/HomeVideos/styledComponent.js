@@ -23,7 +23,7 @@ export const NoResultImg = styled.img`
     width: 450px;
   }
 `
-export const NoResultHeading = styled.p`
+export const NoResultHeading = styled.h1`
   color: ${props => (props.darkTheme ? '#f9f9f9' : '#0f0f0f')};
   font-family: 'Roboto';
   font-size: 18px;

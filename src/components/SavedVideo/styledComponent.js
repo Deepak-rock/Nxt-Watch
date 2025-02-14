@@ -40,7 +40,7 @@ export const Title = styled.p`
     font-size: 18px;
   }
 `
-export const VideosDetailsList = styled.ul`
+export const VideosDetailsList = styled.div`
   width: 100%;
   list-style-type: none;
   display: flex;
@@ -53,7 +53,7 @@ export const VideosDetailsList = styled.ul`
     padding: 15px 0;
   }
 `
-export const ChannelName = styled.li`
+export const ChannelName = styled.p`
   width: 100%;
   color: #475569;
   font-family: 'Roboto';
@@ -63,7 +63,7 @@ export const ChannelName = styled.li`
     font-size: 16px;
   }
 `
-export const Views = styled.li`
+export const Views = styled.p`
   color: #475569;
   font-family: 'Roboto';
   margin: 10px 0 0 0;
@@ -72,7 +72,7 @@ export const Views = styled.li`
     font-size: 14px;
   }
 `
-export const Published = styled.li`
+export const Published = styled.p`
   color: #475569;
   list-style: disc;
   margin: 10px 0 0 25px;
